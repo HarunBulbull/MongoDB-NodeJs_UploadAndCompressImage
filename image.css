@@ -1,0 +1,108 @@
+.blackblurbg{
+    position: fixed;
+    width: 100dvw;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.6);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectImage-area{
+    width: 90%;
+    transform: translateX(-275px);
+    position: fixed;
+    background-color: white;
+    z-index: 1000;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.selectImage-head{
+    background-color: rgba(0,0,0,.04);
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,.02);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selectImage-head input{
+    display: none;
+}
+
+.selectImage-head label{
+    cursor: pointer;
+    padding: .4rem 1rem;
+    background-color: black;
+    color: white;
+    border-radius: 7px;
+}
+
+.selectImageHead-inputs{
+    display: flex;
+    gap: .5rem
+}
+
+.selectImage-All{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 1rem;
+    gap: 1rem;
+    overflow-y: scroll;
+    max-height: 50vh;
+}
+
+.selectImage-All img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.selectedImage{
+    border: 5px solid blue;
+    filter: grayscale(30%);
+}
+
+.primarySelect{
+    border: 5px solid red;
+    filter: grayscale(30%);
+}
+
+.selectImage-bottom{
+    background-color: rgba(0,0,0,.04);
+    padding: 1rem;
+    border-top: 1px solid rgba(0,0,0,.02);
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: .5rem;
+}
+
+@media (max-width: 1280px) {
+    .selectImage-All{
+        grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+@media (max-width: 800px) {
+    .selectImage-All{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .selectImage-head, .selectImage-bottom{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 540px) {
+    .selectImage-area{
+        width: 300%;
+        transform: translateX(-275px);
+    }
+}
